@@ -49,7 +49,21 @@ public class patientTest {
     @Test
     void invalidNumHSE(){
         Exception ex = assertThrows(IllegalArgumentException.class, () ->{
-            new Patient("Joh", "Doherty", "234567890", 26);
+            new Patient("Joh", "Doherty", "234", 26);
+        });
+        assertEquals("Invalid", ex.getMessage());
+    }
+
+    @Test
+    void validAge(){
+        Patient = new Patient("John", "Doe", "0123456789", 25);
+        assertEquals(25, Patient.getAge());
+    }
+
+    @Test
+    void invalidAge(){
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+           new Patient("Joh", "Doherty", "234567890", 121);
         });
         assertEquals("Invalid", ex.getMessage());
     }

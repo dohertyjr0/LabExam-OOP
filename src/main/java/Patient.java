@@ -15,6 +15,9 @@ public class Patient {
         if(numHSE.length() < 10 || numHSE.length() > 10){
             throw new IllegalArgumentException("Invalid");
         }
+        if(age < 0 && age > 120){
+            throw new IllegalArgumentException("Invalid");
+        }
 
         this.name = name;
         this.famName = famName;
