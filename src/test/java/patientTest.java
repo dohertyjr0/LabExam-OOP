@@ -21,7 +21,7 @@ public class patientTest {
     @Test
     void invalidName(){
         Exception ex = assertThrows(IllegalArgumentException.class, () -> {
-            new Patient("Joh", "Doherty", "234567890", 26);
+            new Patient("Jo", "Doherty", "234567890", 26);
         });
         assertEquals("Invalid", ex.getMessage());
     }
@@ -38,6 +38,7 @@ public class patientTest {
             new Patient("Joh", "Doherty", "234567890", 26);
         });
         assertEquals("Invalid", ex.getMessage());
+        System.out.println("Invalid family name");
     }
 
     @Test
