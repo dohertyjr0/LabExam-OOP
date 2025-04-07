@@ -6,9 +6,16 @@ public class Patient {
 
     public Patient(String name, String famName, String numHSE, int age) {
 
-        if(!name.equals("John")){
-            throw new IllegalArgumentException("Invalid name");
+        if(name.length() < 3){
+            throw new IllegalArgumentException("Invalid");
         }
+        if(famName.length() < 3){
+            throw new IllegalArgumentException("Invalid");
+        }
+        if(numHSE.length() < 10 || numHSE.length() > 10){
+            throw new IllegalArgumentException("Invalid");
+        }
+
         this.name = name;
         this.famName = famName;
         this.numHSE = numHSE;
