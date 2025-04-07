@@ -25,4 +25,19 @@ public class patientTest {
         });
         assertEquals("Invalid name", ex.getMessage());
     }
+
+    @Test
+    void validfamName(){
+       Patient = new Patient("John", "Doe", "0123456789", 25);
+        assertEquals("Doe", Patient.getFamName());
+    }
+
+    @Test
+    void invalidfamName(){
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            new Patient("Joh", "Doherty", "234567890", 26);
+        });
+        assertEquals("Invalid name", ex.getMessage());
+    }
+
 }
